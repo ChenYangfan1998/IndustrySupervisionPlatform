@@ -1,0 +1,60 @@
+@import "../../shared/variables";
+
+.container {
+  margin: $page-margin-vertical $page-margin-horizontal;
+}
+
+.heading-wrapper {
+  margin-bottom: 32px;
+}
+
+.heading {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.subheading {
+  margin-top: 8px;
+  color: gray;
+}
+
+.input-area {
+  display: flex;
+  align-items: center;
+  padding: 24px 0;
+  border-top: 1px $gray solid;
+
+  &--bottom-line {
+    border-bottom: 1px $gray solid;
+  }
+}
+
+.input-area--label {
+  min-width: 160px;
+}
+
+.input-area--input {
+  flex: auto;
+}
+
+.login-button {
+  margin-top: 32px;
+  display: block;
+
+  &:not([size='mini']) {
+    width: 100%;
+  }
+}
+
+.bind-wechat-account-switch {
+  display: block;
+  margin-top: 16px;
+  color: gray;
+
+  transform-origin: left;
+  transform: scale(.8);
+}
+
+.red {
+  color: red;
+}

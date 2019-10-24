@@ -1,0 +1,33 @@
+@import './../../shared/variables';
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  font-size: .8rem;
+}
+
+.checkbox-text {
+
+}
+
+.checkbox-item {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 1px solid gray;
+  margin-right: 10px;
+}
+
+.checked::after {
+  content: '';
+  position: absolute;
+  left: 25%;
+  top: 25%;
+  width: 50%;
+  height: 50%;
+  border-radius: 100%;
+  background-color: $theme-color;
+}

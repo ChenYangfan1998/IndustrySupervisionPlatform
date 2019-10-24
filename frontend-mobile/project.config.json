@@ -1,13 +1,16 @@
 {
-  "miniprogramRoot": "./dist",
-  "projectname": "frontend-mobile",
-  "description": "物联网云平台大创项目移动端 UI - 产物包括微信小程序和 Web 页面",
-  "appid": "touristappid",
-  "setting": {
-    "urlCheck": true,
-    "es6": false,
-    "postcss": false,
-    "minified": false
-  },
-  "compileType": "miniprogram"
+	"miniprogramRoot": "dist/",
+	"projectname": "frontend-mobile",
+	"description": "物联网云平台大创项目移动端 UI - 产物包括微信小程序和 Web 页面",
+	"appid": "wx8f908923c1ce2e4b",
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": false,
+		"minified": false
+	},
+	"compileType": "miniprogram",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {}
 }
