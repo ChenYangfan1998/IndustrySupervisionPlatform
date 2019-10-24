@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/dachuang?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: mysqlyyc720
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+      hibernate:
+        ddl-auto: update
+        naming:
+          physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+
+      show-sql: true
