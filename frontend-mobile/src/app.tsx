@@ -1,6 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
 import Index from './pages/index'
-
 import './app.scss'
 
 // 如果需要在 h5 环境中开启 React Devtools
@@ -21,16 +20,17 @@ class App extends Component {
 
   config: any = {
     pages: [
+      'pages/index/index',
       'pages/login/login',
-      'pages/index/index'
+      'pages/device/device'
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
+      navigationBarTextStyle: 'black',
     },
-    style: "v2"
+    style: 'v2',
   }
 
   // 在 App 类中的 render() 函数没有实际作用

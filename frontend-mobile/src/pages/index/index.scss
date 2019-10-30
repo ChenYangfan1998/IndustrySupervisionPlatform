@@ -1,0 +1,42 @@
+@import "../../shared/variables";
+
+.container {
+  margin: $page-margin-vertical $page-margin-horizontal;
+}
+
+.top-nav {
+  margin: (-$page-margin-vertical) (-$page-margin-horizontal) 0 (-$page-margin-horizontal);
+  padding: $page-margin-vertical $page-margin-horizontal $page-margin-vertical $page-margin-horizontal;
+  background-color: $background-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.subheading {
+  color: #8a8a8a;
+}
+
+.heading-icon {
+  // 消除幽灵节点影响垂直居中
+  line-height: 0;
+}
+
+.center-icon {
+  display: inline-block;
+  border: 4px solid #8a8a8a;
+  border-radius: 50%;
+  padding: 14px 16px 18px 16px;
+
+  width: 48px;
+  height: 48px;
+}
+
+.search-bar-wrapper {
+  margin-top: 32px;
+}

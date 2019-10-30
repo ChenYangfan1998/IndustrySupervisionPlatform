@@ -1,5 +1,12 @@
 @import "shared/variables";
+// 全局样式
 
+
+// 覆盖一些原有的样式
 button[type="primary"] {
   background: $theme-color;
+}
+
+.button-hover[type='primary'] {
+  background-color: darken($theme-color, 10%);
 }

@@ -12,8 +12,6 @@ export default function Login() {
   }
 
   function handleLogin() {
-    // login
-
     if (isBindWechatAccount) {
 
     }

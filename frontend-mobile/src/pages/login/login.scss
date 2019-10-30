@@ -1,8 +1,17 @@
 @import "../../shared/variables";
 
+$page-margin-vertical: 64px;
+
 .container {
+  background-color: $background-color;
   margin: $page-margin-vertical $page-margin-horizontal;
 }
+
+.heading {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
 
 .heading-wrapper {
   margin-bottom: 32px;

@@ -1,35 +1,50 @@
-import Taro, { Component, Config } from '@tarojs/taro'
-import {View, Button} from '@tarojs/components'
+import Taro from '@tarojs/taro'
+import {Image, View} from '@tarojs/components'
 import './index.scss'
+import DeviceCard from '../../components/device-card/device-card'
+import centerPNG from '../../images/index/center.png'
+import SearchBar from '../../components/search-bar/search-bar'
 
-export default class Index extends Component {
+export default function Index() {
 
-  /**
-   * 指定config的类型声明为: Taro.Config
-   *
-   * 由于 typescript 对于 object 类型推导只能推出 Key 的基本类型
-   * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
-   * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
-   */
-  config: Config = {
-    navigationBarTitleText: '首页'
+  function handleDeviceCardClick(deviceId: string) {
+    return function () {
+      Taro.navigateTo({
+        url: `/pages/device/device?deviceId=${deviceId}`,
+      }).catch((e) => {
+        console.log(e)
+      })
+    }
   }
 
-  componentWillMount () { }
-
-  componentDidMount () { }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
-
-  render () {
-    return (
-      <View className='index'>
-        <Button>lorem</Button>
+  return (
+    <View className='container'>
+      <View className='top-nav'>
+        <View className='heading-text'>
+          <View className='heading'>
+            我的设备
+          </View>
+          <View className='subheading'>
+            与该账号绑定的所有设备信息
+          </View>
+        </View>
+        <View className='heading-icon'>
+          <Image src={centerPNG} className='center-icon' />
+        </View>
       </View>
-    )
-  }
+      <View className='search-bar-wrapper'>
+        <SearchBar />
+      </View>
+      <View className='devices'>
+        <DeviceCard onClick={handleDeviceCardClick('1')} deviceId='1' title='螺丝刀设备 1' description='实验项目螺丝刀设置' sensors={['转动传感器', '温度传感器']} />
+        <DeviceCard onClick={handleDeviceCardClick('2')} deviceId='2' title='螺丝刀设备 2' description='实验项目螺丝刀设置' />
+      </View>
+    </View>
+  )
+}
+
+Index.config = {
+  navigationBarTitleText: '物联网云平台',
+  navigationBarBackgroundColor: '#f5f5f5',
+  backgroundColor: '#f5f5f5'
 }
