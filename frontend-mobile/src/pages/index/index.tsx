@@ -36,8 +36,9 @@ export default function Index() {
         <SearchBar />
       </View>
       <View className='devices'>
-        <DeviceCard onClick={handleDeviceCardClick('1')} deviceId='1' title='螺丝刀设备 1' description='实验项目螺丝刀设置' sensors={['转动传感器', '温度传感器']} />
-        <DeviceCard onClick={handleDeviceCardClick('2')} deviceId='2' title='螺丝刀设备 2' description='实验项目螺丝刀设置' />
+        <DeviceCard onClick={handleDeviceCardClick('1d2341375')} deviceId='1d2341375' title='螺丝刀设备 1' description='实验项目螺丝刀设置' sensors={['转动传感器', '温度传感器']} />
+        <DeviceCard onClick={handleDeviceCardClick('2d2341375')} deviceId='2d2341375' title='螺丝刀设备 2' description='实验项目螺丝刀设置' />
+        <DeviceCard onClick={handleDeviceCardClick('3d2341375')} deviceId='3d2341375' title='螺丝刀设备 2' description='实验项目螺丝刀设置' />
       </View>
     </View>
   )

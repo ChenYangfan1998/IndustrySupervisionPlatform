@@ -1,5 +1,5 @@
 import {View} from '@tarojs/components'
-import Taro, {useEffect, useState} from '@tarojs/taro'
+import Taro from '@tarojs/taro'
 import './device-card.scss'
 
 interface DeviceCardInfo {
@@ -13,48 +13,23 @@ interface DeviceCardInfo {
 
 export default function DeviceCard(info: DeviceCardInfo) {
 
-  const [showSensorsList, setShowSensorsList] = useState(false)
-
-  useEffect (() => {
-    if (info.description.length > 30) {
-      info.description = info.description.substr(0, 30) + '...'
-    }
-  })
-
-  let sensorsList
-  if (showSensorsList && info.sensors) {
-    sensorsList = info.sensors.map(sensor => {
+  let renderSensors
+  if (info.sensors) {
+    renderSensors = info.sensors.map(sensor => {
       return (
-        <View key={sensor}>{sensor}</View>
+        <View key={sensor} className='sensor'>{sensor}</View>
       )
     })
   } else {
-    sensorsList = ''
+    renderSensors = <View className='sensor'>默认传感器</View>
   }
-
-  const renderSensors = info.sensors ? (
-      <View className='sensor-button' onClick={() => setShowSensorsList(!showSensorsList)}>
-        查看传感器列表 ({info.sensors.length})
-      </View>
-  ): (
-    <View className='sensor'>默认传感器 - 温度</View>
-  )
-
 
   return (
     <View className='container' onClick={info.onClick}>
-      <View className='main-area'>
-        <View className='title'>
-          {info.title}
-        </View>
-        <View className='description'>
-          {info.description}
-        </View>
-      </View>
-      <View className='sensor-area'>
-        {renderSensors}
-        {sensorsList}
-      </View>
+      <View className='title'>{info.title}</View>
+      <View className='device-id'>设备 ID - {info.deviceId}</View>
+      <View className='description'>{info.description}</View>
+      <View className='sensorList'>{renderSensors}</View>
     </View>
   )
 }
